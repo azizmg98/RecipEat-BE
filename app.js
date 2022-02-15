@@ -14,8 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use("/categories", categoryRouter);
-// app.use("/recipes", recipeRouter);
-// app.use("/ingredients", ingredientRouter);
+app.use("/recipes", recipeRouter);
+app.use("/ingredients", ingredientRouter);
 
 app.listen(PORT, () => {
   console.log(`Listening to port ${PORT}`);

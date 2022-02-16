@@ -5,6 +5,7 @@ const cors = require("cors");
 const categoryRouter = require("./api/category/categoryRoutes");
 const recipeRouter = require("./api/recipe/recipeRoutes");
 const ingredientRouter = require("./api/ingredient/ingredientRoutes");
+const userRouter = require("./api/user/userRoutes");
 const passport = require("passport");
 const { localStrategy, jwtStrategy } = require("./middlewares/Passport");
 
@@ -19,9 +20,10 @@ app.use(passport.initialize());
 passport.use(localStrategy);
 passport.use(jwtStrategy);
 
-app.use("/categories", categoryRouter);
-app.use("/recipes", recipeRouter);
-app.use("/ingredients", ingredientRouter);
+app.use("/api/categories", categoryRouter);
+app.use("/api/recipes", recipeRouter);
+app.use("/api/ingredients", ingredientRouter);
+app.use("/api/users", userRouter);
 
 app.listen(PORT, () => {
   console.log(`Listening to port ${PORT}`);

@@ -39,7 +39,7 @@ exports.signIn = (req, res, next) => {
     const user = req.user;
     const payload = {
       _id: user._id,
-      user: user.user,
+      username: user.username,
       exp: Date.now() + JWT_EXPIRATION_MS,
     };
     const token = jwt.sign(JSON.stringify(payload), JWT_SECRET);

@@ -6,7 +6,7 @@ const categoryRouter = require("./api/category/categoryRoutes");
 const recipeRouter = require("./api/recipe/recipeRoutes");
 const ingredientRouter = require("./api/ingredient/ingredientRoutes");
 const passport = require("passport");
-const { localStrategy, jwtStrategy } = require("./middleware/passport");
+const { localStrategy, jwtStrategy } = require("./middlewares/Passport");
 
 dotenv.config();
 const app = express();

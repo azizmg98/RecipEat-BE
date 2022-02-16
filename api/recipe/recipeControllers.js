@@ -1,4 +1,4 @@
-const Recipe = require("../../database/models/recipeModel")
+const Recipe = require("../../database/models/Recipe")
 
 exports.getRecipe = async (req, res, next) => {
     try {

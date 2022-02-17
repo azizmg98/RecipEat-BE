@@ -13,7 +13,7 @@ exports.categoryCreate = async (req, res, next) => {
   try {
     const category = req.body;
     const addCategory = await Category.create(category);
-    res.status(201).json({ msg: category });
+    res.status(201).json(category);
   } catch (error) {
     next(error);
   }

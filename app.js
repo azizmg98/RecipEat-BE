@@ -20,6 +20,14 @@ app.use(passport.initialize());
 passport.use(localStrategy);
 passport.use(jwtStrategy);
 
+// Console logs the requests being pushed to the backend
+app.use((req, res, next) => {
+  console.log(
+    `${req.method} ${req.protocol}://${req.get("host")}${req.originalUrl}`
+  );
+  next();
+});
+
 app.use("/api/categories", categoryRouter);
 app.use("/api/recipes", recipeRouter);
 app.use("/api/ingredients", ingredientRouter);

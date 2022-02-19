@@ -5,8 +5,8 @@ const mongooseSlugPlugin = require("mongoose-slug-plugin");
 const RecipeSchema = new Schema(
   {
     name: { type: String, required: true },
-    description: String,
-    image: String,
+    description: { type: String, required: true },
+    image: { type: String, required: true },
     ingredients: [{ type: mongoose.Schema.Types.ObjectId, ref: "Ingredient" }],
     directions: String,
     category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },

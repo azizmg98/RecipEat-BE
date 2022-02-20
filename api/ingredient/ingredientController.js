@@ -8,3 +8,12 @@ exports.getIngredient = async (req, res, next) => {
     next(error);
   }
 };
+  exports.createIngredient = async (req, res, next) => {
+    try {
+      const ingredient = req.body;
+      const addIngredient = await Ingredient.create(ingredient);
+      res.status(201).json(addIngredient);
+    } catch (error) {
+      next(error);
+    }
+  };

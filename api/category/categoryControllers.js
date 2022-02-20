@@ -34,7 +34,6 @@ exports.categoryDelete = async (req, res, next) => {
 exports.recipeCreate = async (req, res, next) => {
   try {
     const { categoryId } = req.params;
-    console.log(categoryId);
     req.body.category = categoryId;
     const newRecipe = await Recipe.create(req.body);
     await Category.findByIdAndUpdate(categoryId, {
